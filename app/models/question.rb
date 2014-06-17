@@ -1,5 +1,5 @@
 class Question < ActiveRecord::Base
-  belongs_to :user
+  #belongs_to :user
   has_many :answers
   validates :title,
     presence: true
@@ -7,7 +7,5 @@ class Question < ActiveRecord::Base
   validates :description,
     presence: true
 
-  validates :user_id,
-  presence: true,
-  numericality: {only_integer: true}
+  validates :author, presence: true
 end

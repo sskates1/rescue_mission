@@ -1,7 +1,9 @@
 class Answer < ActiveRecord::Base
-  belongs_to :questions
-  belongs_to :user
+  belongs_to :question
+  #belongs_to :user
 
   validates :description,
     presence: true
+
+  validates :author, presence: true
 end

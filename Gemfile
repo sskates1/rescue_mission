@@ -29,7 +29,7 @@ gem 'spring',        group: :development
 #devise for login stuff
 gem 'devise'
 
-gem 'pry'
+gem 'pry-rails', :group => :development
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

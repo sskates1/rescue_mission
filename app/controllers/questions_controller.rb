@@ -6,12 +6,12 @@ class QuestionsController < ApplicationController
   end
 
   def new
-    if !user_signed_in?
-      flash.now[:notice] = "You must be signed in to do that."
-      render :index
-    else
+    # if !user_signed_in?
+    #   flash.now[:notice] = "You must be signed in to do that."
+    #   render :index
+    # else
       @question = Question.new
-    end
+    # end
   end
 
   def create
@@ -29,9 +29,10 @@ class QuestionsController < ApplicationController
   def show
     @question = Question.find(params[:id])
     @answer = Answer.new
+    #binding.pry
   end
 
   def question_params
-    params.require(:question).permit(:title, :description)
+    params.require(:question).permit(:title, :description, :author)
   end
 end

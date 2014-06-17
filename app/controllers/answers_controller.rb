@@ -2,7 +2,7 @@ class AnswersController < ApplicationController
   def create
     @question = Question.find(params[:question_id])
     # use answer_params method
-    @answer = Answer.new(answer_params, params[:question_id])
+    @answer = Answer.new(answer_params)
     # create an association between @answer and @question with the right
     # question_id on the answer
     @answer.question = @question
