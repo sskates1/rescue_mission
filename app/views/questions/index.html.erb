@@ -1,8 +1,11 @@
-<h3>All Questions</h3>
-</br>
-<a href="/questions/new">New Question</a>
-<ul>
+<h3>All Questions</h3> <a class='pull-right' href="/questions/new">New Question</a>
+<hr>
+<ul class='list-unstyled'>
   <% @questions.each do |question| %>
-    <li><a href="/questions/<%=question.id%>"><%= "#{question.title}" %></a></li>
+    <li>
+      <a href="/questions/<%=question.id%>"><%= "#{question.title}" %></a>
+      <br>
+      posted by <%= question.author %> at <%= question.created_at%>
+    </li>
   <% end %>
 </ul>

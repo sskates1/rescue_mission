@@ -13,7 +13,7 @@ class AnswersController < ApplicationController
     else
       flash.now[:notice] = "Uh oh!  Could not post your answer."
       # use render instead of erb
-      render :new
+      render template: 'questions/show'
     end
   end
 

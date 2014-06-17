@@ -14,6 +14,9 @@
     </div>
   <% end %>
  -->
+  <h1 class='page-header'>Questions Center</h1>
+
+
   <% if notice %>
     <p class="alert alert-success"><%= notice %></p>
   <% end %>
@@ -26,5 +29,10 @@
 
   <%= yield %>
 
+  <center>
+    <div class='navbar-fixed-bottom foot'>
+      <a href='/questions'>Questions Home</a> | <a href='/questions/new'>New Question</a>
+    </div>
+  </center>
 </body>
 </html>
