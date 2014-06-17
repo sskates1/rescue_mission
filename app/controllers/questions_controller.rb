@@ -32,6 +32,30 @@ class QuestionsController < ApplicationController
     #binding.pry
   end
 
+  def edit
+    @question = Question.find(params[:id])
+  end
+
+  def update
+    @question = Question.find(params[:id])
+    if @question.update(question_params)
+      redirect_to(@question)
+    else
+      flash.now[:notice] = "Uh oh! Your question could not be updated."
+      render :edit
+    end
+  end
+
+  def destroy
+    @question = Question.find(params[:id])
+    if @question.destroy
+      flash.now[:notice] = "Your question was deleted"
+      redirect_to '#'
+    else
+      flash.now[:notice] = "Uh oh! Your question could not be deleted."
+    end
+  end
+
   def question_params
     params.require(:question).permit(:title, :description, :author)
   end

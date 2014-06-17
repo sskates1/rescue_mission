@@ -4,9 +4,12 @@
   <%= "Posted by #{@question.author} at #{@question.created_at}" %>
 </p>
 
+<h4>Description</h4>
 <p>
   <%= @question.description %>
 </p>
+<%= button_to "Edit", edit_question_path(@question), method: :get %>
+<%= button_to "Delete Question", @question, method: :delete %>
 
 <h4>Answers</h4>
 
@@ -17,6 +20,7 @@
   </p>
 <% end %>
 <hr>
+<h5>Post New Answer</h5>
 <%= form_for [@question, @answer] do |f| %>
   <%= f.label :author %>:
   <%= f.text_field :author %><br>
