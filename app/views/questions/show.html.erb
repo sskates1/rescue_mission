@@ -1,0 +1,31 @@
+<h3><%= @question.title %></h3>
+
+<p>
+  <%= "Posted by #{@question.author} at #{@question.created_at}" %>
+</p>
+
+<p>
+  <%= @question.description %>
+</p>
+
+<p>
+  Categories: <%= @question.category_names %>
+</p>
+
+<h4>Answers</h4>
+
+<% @question.answers.each do |answer| %>
+  <p>
+    <%= "#{answer.author} says: #{answer.description} (at #{answer.created_at})" %>
+  </p>
+<% end %>
+
+<%= form_for [@question, @answer] do |f| %>
+  <%= f.label :author %>:
+  <%= f.text_field :author %><br>
+
+  <%= f.label :description %>:
+  <%= f.text_area :description %><br>
+
+  <%= f.submit %>
+<% end %>
