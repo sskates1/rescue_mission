@@ -5,7 +5,9 @@ class Question < ActiveRecord::Base
     presence: true
 
   validates :description,
-    presence: true
+    presence: true,
+    length: {minimum: 150}
 
-  validates :author, presence: true
+  validates :author, presence: true,
+    length: {minimum: 150}
 end
