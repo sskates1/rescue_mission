@@ -50,7 +50,7 @@ class QuestionsController < ApplicationController
     @question = Question.find(params[:id])
     if @question.destroy
       flash.now[:notice] = "Your question was deleted"
-      redirect_to '#'
+      redirect_to '/'
     else
       flash.now[:notice] = "Uh oh! Your question could not be deleted."
     end
